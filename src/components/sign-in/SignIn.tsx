@@ -1,8 +1,15 @@
-import React, {FormEvent, useRef} from 'react';
+import React, {FormEvent, SyntheticEvent, useRef} from 'react';
+import axios, {AxiosResponse} from 'axios';
+import {useHistory} from 'react-router-dom';
 
 import './SignIn.css';
+import {setAccessToken} from '../../util/local-storage.util';
 
 interface Props {
+}
+
+interface JwtToken {
+  access_token: string;
 }
 
 export const SignIn: React.FC<Props> = () => {
@@ -10,6 +17,31 @@ export const SignIn: React.FC<Props> = () => {
   const codeInputRef = useRef<HTMLInputElement>(null);
   const phoneInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
+
+  const history = useHistory();
+
+  const login = (e: SyntheticEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    const phone = '123456';
+    const password = 'password';
+
+    axios.post('/auth/login', {phone, password})
+      .then((res: AxiosResponse<JwtToken>) => {
+        setAccessToken(res.data.access_token);
+        history.replace('/');
+      });
+
+    // const phone = phoneInputRef.current!.value;
+    // const password = passwordInputRef.current!.value;
+
+    // if (phone && password) {
+    //   axios.post('/auth/login', {phone, password})
+    //     .then((res: AxiosResponse<JwtToken>) => {
+    //       setAccessToken(res.data.access_token);
+    //     });
+    // }
+  }
 
   const onInput = (e: FormEvent<HTMLInputElement>) => {
     const input = e.target as HTMLInputElement;
@@ -27,7 +59,8 @@ export const SignIn: React.FC<Props> = () => {
               alt=""/>
               Telegram
           </span>
-          <button className="sign-in_btn">Next <span className="material-icons">keyboard_arrow_right</span></button>
+          <button className="sign-in_btn" onClick={login}>Next <span
+            className="material-icons">keyboard_arrow_right</span></button>
         </div>
         <div className="sign-in_form">
           <h3 className="header">Sign in</h3>
