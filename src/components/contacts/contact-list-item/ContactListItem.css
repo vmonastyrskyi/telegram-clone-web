@@ -1,0 +1,40 @@
+.contact-item {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.contact-item:hover {
+    background-color: #f2f6fa;
+}
+
+.contact-item > .round-image,
+.contact-item > .round-image.no-image {
+    margin-right: 12px;
+}
+
+.contact-item > .information {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item .contact-peer {
+    margin-bottom: 1px;
+}
+
+.contact-item .contact-peer > span {
+    font-weight: bold;
+    font-size: 13px;
+    color: #222222;
+}
+
+.contact-item .contact-online-status {
+    margin-top: 1px;
+}
+
+.contact-item .contact-online-status > span {
+    font-size: 13px;
+    color: #999999;
+    font-weight: 400;
+}

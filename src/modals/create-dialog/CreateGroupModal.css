@@ -1,0 +1,70 @@
+/*.modal-content {*/
+/*    width: 420px;*/
+/*    top: 5vh;*/
+/*    bottom: 4vh;*/
+/*}*/
+
+/*.modal-header-title {*/
+/*    color: #ffffff;*/
+/*    font-size: 13px;*/
+/*    font-weight: 600;*/
+/*    margin-left: 26px;*/
+/*}*/
+
+/*.modal-header-close-btn {*/
+/*    color: #dde8f1;*/
+/*    font-size: 13px;*/
+/*    font-weight: 600;*/
+/*    padding: 0;*/
+/*    margin-right: 22px;*/
+/*}*/
+
+/*.modal-header-close-btn:hover {*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*.modal-body {*/
+/*    flex: 1 0 auto;*/
+/*}*/
+
+/*.modal-body > .search {*/
+/*    padding: 7px 12px 6px;*/
+/*    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);*/
+/*}*/
+
+/*.modal-body > .search > .search-input {*/
+/*    font-size: 12px;*/
+/*    background-color: transparent;*/
+/*    border: 1px solid transparent;*/
+/*}*/
+
+/*.modal-body > .search > .search-input:focus {*/
+/*    border: 1px solid transparent;*/
+/*}*/
+
+/*.modal-footer {*/
+/*    flex: 0 0 30px;*/
+/*    padding: 15px 27px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: flex-end;*/
+/*}*/
+
+/*.modal-footer > button {*/
+/*    text-transform: uppercase;*/
+/*    color: #72a0c7;*/
+/*    font-weight: 700;*/
+/*    font-size: 13px;*/
+/*    padding: 6px 10px;*/
+/*    border-radius: 2px;*/
+/*    line-height: 18px*/
+/*}*/
+
+/*.modal-footer > button:not(.disabled):hover {*/
+/*    background-color: #f2f6fa;*/
+/*}*/
+
+/*.modal-footer > button.disabled {*/
+/*    cursor: not-allowed;*/
+/*    opacity: .65;*/
+/*}*/

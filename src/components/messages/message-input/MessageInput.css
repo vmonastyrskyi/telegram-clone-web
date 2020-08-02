@@ -1,0 +1,107 @@
+.message-input-container {
+    width: 524px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    flex-grow: 0;
+    flex-basis: auto;
+    align-self: flex-end;
+    padding: 10px 15px 21px 15px;
+}
+
+.message-input-container .image-from {
+    flex-grow: 0;
+    margin-right: 19px;
+}
+
+.message-input-container .image-to {
+    flex-grow: 0;
+    margin-left: 19px;
+}
+
+.message-input-container .user-input {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-input-container .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message-input-container .buttons :nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    line-height: 30px;
+}
+
+.message-input-container .send-file,
+.message-input-container .send-media {
+    margin-right: 20px;
+    color: #b5b5b5;
+}
+
+.message-input-container .send-file:hover,
+.message-input-container .send-media:hover {
+    color: #a3a3a3;
+}
+
+.message-input-container .buttons:nth-child(2) {
+}
+
+.message-input-container .message-textarea {
+    font-size: 12px;
+    line-height: 17px;
+    border: none;
+    box-shadow: 0 1px 0 #e8e8e8;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    min-height: 52px;
+    max-height: 200px;
+    width: 100%;
+    transition: box-shadow ease-in-out .15s;
+    margin: 0 auto 15px auto;
+    padding: 0;
+    font-family: inherit;
+}
+
+.message-input-container .emoji-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    color: #b5b5b5;
+    font-size: 26px;
+}
+
+.message-input-container .message-textarea:focus {
+    border: none;
+    box-shadow: 0 2px 0 #77b7e4;
+}
+
+.message-input-container .message-textarea::placeholder {
+    color: #9AA2AB;
+}
+
+.message-input-container .message-textarea:focus::placeholder {
+    color: #bcc1c7;
+}
+
+.message-input-container .send-message-btn {
+    font-weight: bold;
+    color: #499dd9;
+    font-size: 13px;
+    line-height: 18px;
+    height: 18px;
+    border-radius: 0;
+}
+
+.message-input-container .send-message-btn:hover {
+    color: #3589c5;
+}

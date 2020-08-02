@@ -1,0 +1,124 @@
+.message-item {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    flex-basis: auto;
+    align-self: flex-end;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.message-item.checked,
+.message-item.checked:hover {
+    background-color: #f2f6fa;
+}
+
+.message-item:hover .checked-status {
+    opacity: .5;
+}
+
+.message-item.checked .checked-status {
+    opacity: 1;
+}
+
+.message-item.checked:hover .checked-status {
+    opacity: 1;
+}
+
+.message-item.checked .message-date,
+.message-item.checked:hover .message-date {
+    color: #899daf;
+}
+
+.message-item.same-owner .message-text {
+    margin-left: 57px;
+}
+
+.message-item > div {
+    width: 530px;
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
+}
+
+.message-item .message-statuses {
+    position: absolute;
+    height: 100%;
+}
+
+.message-item .checked-status {
+    position: absolute;
+    font-size: 28px;
+    color: #6794b7;
+    top: 16px;
+    right: 18px;
+    opacity: 0;
+}
+
+.message-item .read-status {
+    position: absolute;
+    background-color: #4eabf1;
+    top: 25px;
+    right: -2px;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.message-item.same-owner .checked-status {
+    top: calc(50% - 14px);
+}
+
+.message-item.same-owner .read-status {
+    top: calc(50% - 5px);
+}
+
+.message-item .read-status.read {
+    opacity: 0;
+}
+
+.message-item .message-body {
+    display: flex;
+    flex-direction: row;
+    margin: 9px 10px 9px 16px;
+    align-items: center;
+}
+
+.message-item .message-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-item .message-owner {
+    color: #3c7aaf;
+    font-weight: 700;
+    font-size: 13px;
+    margin: 2px auto 4px 0;
+}
+
+.message-item .message-owner:hover {
+   text-decoration: underline;
+}
+
+.message-item .message-date {
+    align-self: flex-start;
+    font-size: 11px;
+    color: #adadad;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.message-item .message-text {
+    line-height: 1.5;
+    font-size: 13px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    width: 380px;
+}
+
+.message-item .round-image,
+.message-item .round-image--no-image {
+    margin: 0 15px auto 0;
+}

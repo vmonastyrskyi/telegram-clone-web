@@ -1,0 +1,18 @@
+.authenticated_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.authenticated_container .left_sector {
+    width: 100%;
+}
+
+.authenticated_container .middle_sector {
+    width: 1010px;
+}
+
+.authenticated_container .right_sector {
+    width: 100%;
+}
+

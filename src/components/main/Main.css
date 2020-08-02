@@ -1,0 +1,6 @@
+.main-container {
+    display: grid;
+    grid-template-columns: 310px 700px;
+    height: 93vh;
+    box-shadow: 0 1px 0 #dfe5ec;
+}
