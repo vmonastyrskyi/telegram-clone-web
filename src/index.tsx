@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import {applyMiddleware, compose, createStore} from 'redux';
 import {Provider} from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
+import {BrowserRouter} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 import './index.css';
 import {App} from './App';
-import {rootReducer} from "./redux/rootReducer";
-import {BrowserRouter} from "react-router-dom";
+import {rootReducer} from './redux/rootReducer';
+import {watchLoadDialogs} from "./redux/dialogs/sagas";
+import {watchLoadContacts} from './redux/contacts/sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = (window as any)['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose || compose;
@@ -20,6 +22,9 @@ const store = createStore(
     )
   )
 );
+
+sagaMiddleware.run(watchLoadDialogs);
+sagaMiddleware.run(watchLoadContacts);
 
 ReactDOM.render(
   <React.StrictMode>

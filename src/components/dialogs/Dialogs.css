@@ -1,0 +1,7 @@
+.dialogs-container {
+    flex-grow: 3;
+    background-color: #ffffff;
+    border-right: 2px solid #DFE5EC;
+    border-bottom: 1px solid #DFE5EC;
+    border-left: 1px solid #DFE5EC;
+}

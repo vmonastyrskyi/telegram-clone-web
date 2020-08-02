@@ -23,7 +23,7 @@ export const SignIn: React.FC<Props> = () => {
   const login = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    const phone = '123456';
+    const phone = '955584480';
     const password = 'password';
 
     axios.post('/auth/login', {phone, password})
@@ -49,46 +49,48 @@ export const SignIn: React.FC<Props> = () => {
   }
 
   return (
-    <div className="sign-in_container">
-      <div className="header"/>
-      <div className="main">
-        <div className="sign-in_head">
+    <div className="login-container">
+      <div className="login-container__header"/>
+      <div className="login-container__main">
+        <div className="login-form__header">
           <span className="logo">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png"
               alt=""/>
               Telegram
           </span>
-          <button className="sign-in_btn" onClick={login}>Next <span
-            className="material-icons">keyboard_arrow_right</span></button>
+          <button className="login-btn" onClick={login}>
+            Next
+            <span className="material-icons">keyboard_arrow_right</span>
+          </button>
         </div>
-        <div className="sign-in_form">
+        <div className="login-form__body">
           <h3 className="header">Sign in</h3>
           <p className="hint">Please choose your country and enter your full phone number.</p>
-          <div className="country_input">
-            <div className="input-form">
+          <div className="country-input">
+            <div className="form-control">
               <input ref={countryInputRef} onInput={onInput} id="country" type="text" autoComplete="off"/>
               <label htmlFor="country">Country</label>
             </div>
           </div>
-          <div className="phone_input">
-            <div className="input-form">
+          <div className="phone-input">
+            <div className="form-control">
               <input ref={codeInputRef} onInput={onInput} id="code" type="text" autoComplete="off"/>
               <label htmlFor="code">Code</label>
             </div>
-            <div className="input-form">
+            <div className="form-control">
               <input ref={phoneInputRef} onInput={onInput} id="phone" type="text" autoComplete="off"/>
               <label htmlFor="phone">Phone number</label>
             </div>
           </div>
-          <div className="password_input">
-            <div className="input-form">
+          <div className="password-input">
+            <div className="form-control">
               <input ref={passwordInputRef} onInput={onInput} id="password" type="password"/>
               <label htmlFor="password">Password</label>
             </div>
           </div>
         </div>
-        <div className="sign-in_footer">
+        <div className="login-form__footer">
           <p>Welcome to the unofficial Telegram Clone web-client.</p>
           <a href="/">Learn more</a>
         </div>

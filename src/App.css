@@ -3,15 +3,3 @@
     flex-direction: row;
     height: 100vh;
 }
-
-.left_sector {
-    width: 100%;
-}
-
-.middle_sector {
-    width: 1000px;
-}
-
-.right_sector {
-    width: 100%;
-}

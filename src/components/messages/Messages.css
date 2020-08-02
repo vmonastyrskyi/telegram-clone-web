@@ -1,0 +1,8 @@
+.messages_container {
+    flex-grow: 7;
+    background-color: #ffffff;
+    border-right: 1px solid #DFE5EC;
+    border-bottom: 1px solid #DFE5EC;
+    display: flex;
+    flex-direction: column;
+}

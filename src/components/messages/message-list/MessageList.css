@@ -1,0 +1,19 @@
+.messages {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: auto;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.messages.is-checking > li:hover {
+    background-color: #f2f6fa;
+}
+
+.messages.is-checking > li:hover .message-date {
+    color: #899daf;
+}

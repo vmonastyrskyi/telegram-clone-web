@@ -1,0 +1,64 @@
+.message-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 0;
+    margin: 0 12px;
+    padding: 0 0 41px 0;
+    height: 87px;
+    box-shadow: 0 -1px 0 #eeeeee;
+}
+
+.message-options .options-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.message-options .options-buttons button,
+.message-options .cancel-btn button {
+    font-family: Tahoma, monospace;
+    border-radius: 2px;
+    padding: 9px 18px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+}
+
+.message-options .options-buttons button {
+    margin: 6px 6px 6px 12px;
+    color: #fff;
+    background-color: #6490b1;
+}
+
+.message-options .options-buttons button:hover {
+    background-color: #4a80a9;
+}
+
+.message-options .options-buttons button span {
+    color: #b9cfe3;
+    font-size: 12px;
+}
+
+.message-options .cancel-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.message-options .cancel-btn button {
+    background-color: transparent;
+    color: #4680b3;
+    margin: 6px 12px;
+    font-size: 13px;
+}
+
+.message-options .cancel-btn button:hover {
+    background-color: #f2f6fa;
+}
+
+

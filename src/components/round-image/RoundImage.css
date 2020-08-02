@@ -1,0 +1,18 @@
+.round-image,
+.round-image.no-image {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+}
+
+.round-image.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.round-image.no-image span {
+    color: #ffffff;
+    font-weight: 500;
+    user-select: none;
+}

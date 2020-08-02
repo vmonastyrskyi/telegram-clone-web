@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {Route, Switch, useHistory} from 'react-router-dom';
 
 import './App.css';
-import {Authentication} from './pages/auth/Authentication';
+import {Authenticated} from "./pages/authenticated/Authenticated";
+import {Authentication} from './pages/authentication/Authentication';
 import {isTokenExpired} from './util/jwt.util';
 import {containsAccessToken} from './util/local-storage.util';
 
@@ -38,6 +39,7 @@ export const App: React.FC<Props> = () => {
   return (
     <div className="app_container">
       <Switch>
+        <Route exact path={'/'} component={Authenticated}/>
         <Route exact path={'/login'} component={Authentication}/>
       </Switch>
     </div>

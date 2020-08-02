@@ -1,29 +1,29 @@
-.sign-in_container {
+.login-container {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.sign-in_container > .header {
+.login-container .login-container__header {
     height: 226px;
     background-color: #5682a3;
 }
 
-.sign-in_container .main {
+.login-container .login-container__main {
     position: absolute;
     width: 404px;
     left: calc(50% - 202px);
     top: 94px;
 }
 
-.sign-in_container .main .sign-in_head {
+.login-container .login-form__header {
     height: 75px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.sign-in_container .main .sign-in_head .logo {
+.login-container .logo {
     font-size: 15px;
     color: #ffffff;
     font-weight: 500;
@@ -33,13 +33,13 @@
     align-items: center;
 }
 
-.sign-in_container .main .sign-in_head .logo > img {
+.login-container .logo > img {
     width: 30px;
     height: 30px;
     margin-right: 18px;
 }
 
-.sign-in_container .main .sign-in_head .sign-in_btn {
+.login-container .login-btn {
     font-size: 13px;
     padding: 30px 10px 28px 15px;
     line-height: 20px;
@@ -53,11 +53,11 @@
     align-items: center;
 }
 
-.sign-in_container .main .sign-in_head .sign-in_btn > span {
+.login-container .login-btn > span {
     margin-left: 5px;
 }
 
-.sign-in_container .main .sign-in_form {
+.login-container .login-form__body {
     background-color: #fff;
     padding: 44px 65px;
     box-shadow: 0 1px 1px rgba(97, 127, 152, .2), 1px 0 0 rgba(97, 127, 152, .1), -1px 0 0 rgba(97, 127, 152, .1);
@@ -66,27 +66,27 @@
     margin: 0;
 }
 
-.sign-in_container .main .sign-in_form .header {
+.login-container .header {
     color: #222;
     margin: 0 0 20px;
     font-size: 15px;
     font-weight: 700;
 }
 
-.sign-in_container .main .sign-in_form .hint {
+.login-container .hint {
     color: #999;
     margin: 15px 0 30px;
     font-size: 13px;
     line-height: 160%;
 }
 
-.sign-in_container .main .sign-in_form .country-input,
-.sign-in_container .main .sign-in_form .phone_input {
+.login-container .country-input,
+.login-container .phone-input {
     display: flex;
     flex-direction: row;
 }
 
-.sign-in_container .main .sign-in_form .input-form {
+.login-container .form-control {
     position: relative;
     color: #999;
     padding: 0;
@@ -94,7 +94,7 @@
     height: 50px;
 }
 
-.sign-in_container .main .sign-in_form .input-form label {
+.login-container .form-control label {
     top: 23px;
     position: absolute;
     display: block;
@@ -103,7 +103,7 @@
     cursor: text;
 }
 
-.sign-in_container .main .sign-in_form .input-form input {
+.login-container .form-control input {
     position: relative;
     display: block;
     font-size: 13px;
@@ -116,27 +116,27 @@
     width: 100%;
 }
 
-.sign-in_container .main .sign-in_form .input-form input:focus {
+.login-container .form-control input:focus {
     box-shadow: 0 2px 0 #77b7e4;
 }
 
-.sign-in_container .main .sign-in_form .input-form input:focus + label,
-.sign-in_container .main .sign-in_form .input-form input.has-value + label {
+.login-container .form-control input:focus + label,
+.login-container .form-control input.has-value + label {
     transform: translateY(-22px);
     font-size: 12px;
     cursor: default;
 }
 
-.sign-in_container .main .sign-in_form .phone_input :nth-child(1) {
+.login-container .phone-input :nth-child(1) {
     flex: 0 0 50px;
     margin-right: 25px;
 }
 
-.sign-in_container .main .sign-in_form .phone_input :nth-child(2) {
+.login-container .phone-input :nth-child(2) {
     flex: 1 0 auto;
 }
 
-.sign-in_container .main .sign-in_footer {
+.login-container .login-form__footer {
     color: #84a2bc;
     font-size: 13px;
     margin-top: 25px;
@@ -144,20 +144,20 @@
     line-height: 16px;
 }
 
-.sign-in_container .main .sign-in_footer p {
+.login-container .login-form__footer p {
     margin: 0 0 10px 0;
 }
 
-.sign-in_container .main .sign-in_footer a {
+.login-container .login-form__footer a {
     font-weight: 700;
     text-decoration: none;
 }
 
-.sign-in_container .main .sign-in_footer a:hover {
+.login-container .login-form__footer a:hover {
     text-decoration: underline;
 }
 
-.sign-in_container .main .sign-in_footer a:visited {
+.login-container .login-form__footer a:visited {
     color: #84a2bc;
 }
 
