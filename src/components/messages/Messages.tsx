@@ -11,23 +11,32 @@ import {MessageOptions} from "./message-options/MessageOptions";
 interface Props {
 }
 
-export interface IMessage {
-  id: number,
-  messageOwner: string
-  text: string,
-  image: string,
-  date: string,
-  isRead: boolean,
-  isChecked: boolean,
-  isSameOwner: boolean
-}
+// export interface IMessage {
+//   id: string;
+//   text: string;
+//   owner: string;
+//   avatar: string;
+//   date: string;
+//   isRead: boolean;
+//   isChecked: boolean;
+//   isSameOwner: boolean;
+//   isUpdated: boolean;
+// }
 
 export const Messages: React.FC<Props> = () => {
-  const messages = useSelector((state: RootState) => state.messages.items);
   const [isCheckingMessages, setIsCheckingMessages] = useState(false);
   const [checkedAmount, setCheckedAmount] = useState(0);
 
-  const onCheckedMessages = (id: number, checked: boolean) => {
+  const selectedDialog = useSelector((state: RootState) => state.dialogs.selectedDialog);
+  const messages = useSelector((state: RootState) => state.messages.items);
+
+  for (let i = 0; i < messages.length - 1; i++) {
+    if (messages[i].owner.id === messages[i + 1].owner.id) {
+      messages[i + 1].isSameOwner = true;
+    }
+  }
+
+  const onCheckedMessages = (id: string, checked: boolean) => {
     messages.find(message => message.id === id)!.isChecked = checked;
     const checkedMessages = messages.filter(message => message.isChecked);
     setIsCheckingMessages(checkedMessages.length > 0);
@@ -41,20 +50,28 @@ export const Messages: React.FC<Props> = () => {
   }
 
   return (
-    <div className="messages_container">
-      <MessageList
-        isCheckingMessages={isCheckingMessages}
-        checkMessages={onCheckedMessages}
-        messages={messages}
-      />
-      <HistoryTyping/>
-      {!isCheckingMessages ?
-        <MessageInput/> :
-        <MessageOptions
-          checkedAmount={checkedAmount}
-          closeOptions={closeOptions}
-        />
-      }
+    <div className="messages-container">
+      {selectedDialog ?
+        <>
+          <MessageList
+            isCheckingMessages={isCheckingMessages}
+            checkMessages={onCheckedMessages}
+            messages={messages}
+          />
+          <HistoryTyping/>
+          {!isCheckingMessages ?
+            <MessageInput/> :
+            <MessageOptions
+              checkedAmount={checkedAmount}
+              closeOptions={closeOptions}
+            />
+          }
+        </> :
+        <>
+          <div className="no-data">
+            Пожалуйста, выберите чат чтобы начать переписку
+          </div>
+        </>}
     </div>
   );
 }

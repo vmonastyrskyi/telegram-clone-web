@@ -14,7 +14,7 @@ export interface JwtPayload {
 
 export function getPayload(): JwtPayload | null {
   const token = localStorage.getItem('access_token');
-  if (token && !isTokenExpired) {
+  if (token && !isTokenExpired()) {
     return jwt_decode(token);
   }
   return null;

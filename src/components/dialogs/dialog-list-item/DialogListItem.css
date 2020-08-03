@@ -9,13 +9,54 @@
     justify-content: left;
     cursor: pointer;
     user-select: none;
+    overflow: hidden;
 }
 
 .dialog-item:hover {
     background-color: #f2f6fa;
 }
 
-.last-message-date {
+.dialog-item.selected,
+.dialog-item.selected:hover {
+    background-color: #6490b1;
+}
+
+.dialog-item .round-image,
+.dialog-item .round-image--no-image {
+    flex: 0 0 48px;
+    margin-right: 15px;
+}
+
+.dialog-item .information {
+    flex: 1 0 auto;
+}
+
+.dialog-item .dialog-peer,
+.dialog-item .dialog-message {
+    position: relative;
+    display: flex;
+    line-height: 18px;
+}
+
+.dialog-item .dialog-peer {
+    margin-bottom: 4px;
+}
+
+.dialog-item .dialog-message {
+    margin-top: 4px;
+}
+
+.dialog-item .dialog-name {
+    max-width: 164px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    font-size: 13px;
+    color: #222222;
+}
+
+.dialog-item .last-message-date {
     position: absolute;
     font-size: 11px;
     color: #b3b3b3;
@@ -33,53 +74,25 @@
     color: #758c9b;
 }
 
-.dialog-item .round-image,
-.dialog-item .round-image--no-image {
-    flex: 0 0 48px;
-    margin-right: 15px;
-}
-
-.dialog-item .information {
-    flex: 1 0 auto;
-}
-
-.dialog-peer,
-.dialog-message {
-    position: relative;
-    display: flex;
-    line-height: 18px;
-}
-
-.dialog-peer {
-    margin-bottom: 4px;
-}
-
-.dialog-message {
-    margin-top: 4px;
-}
-
-.dialog-item .title {
-    width: 180px;
+.dialog-item .last-message {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-weight: bold;
-    font-size: 13px;
-    color: #222222;
-}
-
-.last-message {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 200px;
+    max-width: 164px;
     font-size: 13px;
     color: #a3a3a3;
     font-weight: 400;
 }
 
-.last-message-owner {
+.dialog-item .last-message-owner {
     color: #5387ac;
     font-weight: 500;
     text-decoration: none;
+}
+
+.dialog-item.selected .dialog-name,
+.dialog-item.selected .last-message,
+.dialog-item.selected .last-message-owner,
+.dialog-item.selected .last-message-date {
+    color: #ffffff;
 }

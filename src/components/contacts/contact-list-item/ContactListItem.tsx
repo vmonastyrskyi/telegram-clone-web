@@ -19,7 +19,7 @@ export const ContactListItem: React.FC<Props> = (props) => {
 
   return (
     <li className="contact-item">
-      <RoundImage image={props.contact.avatar}
+      <RoundImage avatar={props.contact.avatar}
                   title={title}
                   width={42}
                   height={42}

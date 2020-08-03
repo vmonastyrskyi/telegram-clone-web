@@ -1,14 +1,10 @@
-import {BEGIN_CHECK_MESSAGES, CREATE_MESSAGE, END_CHECK_MESSAGES} from "./types";
-import {IMessage} from "../../components/messages/Messages";
+import {LOAD_MESSAGES, PUT_MESSAGES} from './types';
+import {MessageItem} from "./reducers";
 
-export const createMessage = (message: IMessage) => {
-  return {type: CREATE_MESSAGE, payload: message};
+export const loadMessages = (dialogId: string) => {
+  return {type: LOAD_MESSAGES, payload: dialogId};
 }
 
-export const beginCheckItems = () => {
-  return {type: BEGIN_CHECK_MESSAGES};
-}
-
-export const endCheckItems = () => {
-  return {type: END_CHECK_MESSAGES};
+export const putMessages = (messages: MessageItem[]) => {
+  return {type: PUT_MESSAGES, payload: messages};
 }
