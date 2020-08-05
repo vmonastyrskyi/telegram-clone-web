@@ -9,28 +9,16 @@
     justify-content: left;
     cursor: pointer;
     user-select: none;
+    overflow: hidden;
 }
 
 .dialog-item:hover {
     background-color: #f2f6fa;
 }
 
-.last-message-date {
-    position: absolute;
-    font-size: 11px;
-    color: #b3b3b3;
-    font-weight: 500;
-    top: 0;
-    right: 0;
-    line-height: 12px;
-}
-
-.dialog-item:hover .last-message-date {
-    color: #92a6ba;
-}
-
-.dialog-item:hover .last-message {
-    color: #758c9b;
+.dialog-item.selected,
+.dialog-item.selected:hover {
+    background-color: #6490b1;
 }
 
 .dialog-item .round-image,
@@ -43,23 +31,23 @@
     flex: 1 0 auto;
 }
 
-.dialog-peer,
-.dialog-message {
+.dialog-item .dialog-peer,
+.dialog-item .dialog-message {
     position: relative;
     display: flex;
     line-height: 18px;
 }
 
-.dialog-peer {
+.dialog-item .dialog-peer {
     margin-bottom: 4px;
 }
 
-.dialog-message {
+.dialog-item .dialog-message {
     margin-top: 4px;
 }
 
-.dialog-item .title {
-    width: 180px;
+.dialog-item .dialog-name {
+    max-width: 164px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -68,18 +56,43 @@
     color: #222222;
 }
 
-.last-message {
+.dialog-item .message-date {
+    position: absolute;
+    font-size: 11px;
+    color: #b3b3b3;
+    font-weight: 500;
+    top: 0;
+    right: 0;
+    line-height: 12px;
+}
+
+.dialog-item:hover .message-date {
+    color: #92a6ba;
+}
+
+.dialog-item:hover .message {
+    color: #758c9b;
+}
+
+.dialog-item .message {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 200px;
+    max-width: 164px;
     font-size: 13px;
     color: #a3a3a3;
     font-weight: 400;
 }
 
-.last-message-owner {
+.dialog-item .message-owner {
     color: #5387ac;
     font-weight: 500;
     text-decoration: none;
+}
+
+.dialog-item.selected .dialog-name,
+.dialog-item.selected .message,
+.dialog-item.selected .message-owner,
+.dialog-item.selected .message-date {
+    color: #ffffff;
 }

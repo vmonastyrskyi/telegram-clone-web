@@ -1,12 +1,18 @@
-import {IDialog} from '../../components/dialogs/Dialogs';
-import {PUT_DIALOGS} from './types';
+import {PUT_DIALOGS, SELECT_DIALOG} from './types';
+import {Dialog} from "./sagas";
+
+export interface DialogItem extends Dialog {
+  isSelected: boolean;
+}
 
 interface State {
-  items: IDialog[]
+  items: DialogItem[];
+  selectedDialog: DialogItem | undefined;
 }
 
 const initialState: State = {
-  items: []
+  items: [],
+  selectedDialog: undefined
 }
 
 export const dialogsReducer = (state: State = initialState, action: any): State => {
@@ -15,6 +21,11 @@ export const dialogsReducer = (state: State = initialState, action: any): State 
       return {
         ...state,
         items: action.payload
+      };
+    case SELECT_DIALOG:
+      return {
+        ...state,
+        selectedDialog: action.payload
       };
     default:
       return state;

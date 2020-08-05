@@ -3,8 +3,9 @@ import React from 'react';
 import './MessageOptions.css';
 
 interface Props {
-  checkedAmount: number,
-  closeOptions: any
+  checkedAmount: number;
+
+  closeOptions(): void;
 }
 
 export const MessageOptions: React.FC<Props> = (props) => {

@@ -2,10 +2,10 @@ import React from 'react';
 
 import './DialogList.css';
 import {DialogListItem} from "../dialog-list-item/DialogListItem";
-import {IDialog} from "../Dialogs";
+import {DialogItem} from "../../../redux/dialogs/reducers";
 
 interface Props {
-  dialogs: IDialog[]
+  dialogs: DialogItem[];
 }
 
 export const DialogList: React.FC<Props> = (props) => {

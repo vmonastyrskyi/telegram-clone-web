@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
+import {useSelector} from 'react-redux';
 
 import './Navbar.css';
-import {CreateGroupModal} from "../../modals/create-dialog/CreateGroupModal";
-import {ContactsModal} from "../../modals/contacts/ContactsModal";
+import {CreateGroupModal} from '../../modals/create-dialog/CreateGroupModal';
+import {ContactsModal} from '../../modals/contacts/ContactsModal';
+import {RootState} from '../../redux/rootReducer';
 
 const modalContainer = document.getElementById('modal')!;
 
@@ -11,9 +13,19 @@ interface Props {
 }
 
 export const Navbar: React.FC<Props> = () => {
-  const [isOptionsOpened, setIsOptionsOpened] = useState(false)
-  const [isCreateGroupModalOpened, setIsCreateGroupModalOpened] = useState(false)
-  const [isContactsModalOpened, setIsContactsModalOpened] = useState(true)
+  const selectedDialog = useSelector((state: RootState) => state.dialogs.selectedDialog);
+
+  const [isOptionsOpened, setIsOptionsOpened] = useState(false);
+  const [isCreateGroupModalOpened, setIsCreateGroupModalOpened] = useState(false);
+  const [isContactsModalOpened, setIsContactsModalOpened] = useState(false);
+
+  let dialogName: string | undefined;
+  if (selectedDialog) {
+    if (selectedDialog.type === 'dialog') {
+      const dialogUser = selectedDialog.users[0];
+      dialogName = (dialogUser.firstName + ' ' + (dialogUser.lastName ? dialogUser.lastName : '')).trim();
+    }
+  }
 
   useEffect(() => {
     const closeOptions = () => {
@@ -21,7 +33,6 @@ export const Navbar: React.FC<Props> = () => {
         setIsOptionsOpened(false);
       }
     }
-
     document.addEventListener('click', closeOptions, false);
     return () => {
       document.removeEventListener('click', closeOptions, false);
@@ -70,25 +81,29 @@ export const Navbar: React.FC<Props> = () => {
           </ul>
         </div>
 
-        <div className="navbar__information">
-          <div className="user-info">
-            <span className="user-name">Пользователь 2</span>
-            <span className="user-status">online</span>
+        {selectedDialog &&
+        <>
+          <div className="navbar__information">
+            <div className="user-info">
+              <span className="user-name">{dialogName}</span>
+              <span className="user-status">online</span>
+            </div>
+
+            <div className="option-name">
+
+            </div>
           </div>
 
-          <div className="option-name">
-
+          <div className="navbar__option-buttons">
+            <button className="search-btn">
+              <span className="material-icons">search</span>
+            </button>
+            <button className="options-btn">
+              <span className="material-icons">more_vert</span>
+            </button>
           </div>
-        </div>
-
-        <div className="navbar__option-buttons">
-          <button className="search-btn">
-            <span className="material-icons">search</span>
-          </button>
-          <button className="options-btn">
-            <span className="material-icons">more_vert</span>
-          </button>
-        </div>
+        </>
+        }
       </div>
 
       {isCreateGroupModalOpened

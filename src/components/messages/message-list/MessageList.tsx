@@ -1,17 +1,18 @@
 import React from 'react';
 
 import './MessageList.css';
-import {IMessage} from "../Messages";
 import {MessageListItem} from "../message-list-item/MessageListItem";
+import {MessageItem} from "../../../redux/messages/reducers";
 
 interface Props {
-  messages: IMessage[],
-  checkMessages: any,
-  isCheckingMessages: boolean
+  messages: MessageItem[];
+  isCheckingMessages: boolean;
+
+  checkMessages(id: string, checked: boolean): void;
 }
 
 export const MessageList: React.FC<Props> = (props) => {
-  const onMessageChecked = (id: number, checked: boolean) => {
+  const onMessageChecked = (id: string, checked: boolean) => {
     props.checkMessages(id, checked);
   }
 

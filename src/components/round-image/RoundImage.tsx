@@ -3,8 +3,8 @@ import React, {useState} from 'react';
 import './RoundImage.css';
 
 interface Props {
-  image: string | undefined;
-  title: string;
+  avatar: string | undefined;
+  title: string | undefined;
   width: number;
   height: number;
   fontSize: number;
@@ -12,15 +12,15 @@ interface Props {
 
 export const RoundImage: React.FC<Props> = (props) => {
   const [hasImage] = useState(
-    props.image !== undefined && props.image !== ''
+    props.avatar && props.avatar !== ''
   );
   const [hasTitle] = useState(
-    props.title !== undefined && props.title !== ''
+    props.title && props.title !== ''
   );
 
   if (hasImage) {
     return <img className="round-image"
-                src={props.image}
+                src={props.avatar}
                 style={{width: props.width, height: props.height}}
                 alt=""/>
   }

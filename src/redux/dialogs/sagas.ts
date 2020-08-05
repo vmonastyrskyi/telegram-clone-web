@@ -4,17 +4,34 @@ import axios, {AxiosRequestConfig, AxiosResponse} from 'axios';
 import {LOAD_DIALOGS} from './types';
 import {putDialogs} from './actions';
 import {getAccessToken} from '../../util/local-storage.util';
-import {IDialog} from "../../components/dialogs/Dialogs";
+import {DialogItem} from "./reducers";
 
-interface Dialog {
+export interface Dialog {
   id: string;
-  users: [{
+  type: string;
+  name: string;
+  users: {
     id: string;
     firstName: string;
     lastName: string;
     avatar: string;
     phone: string;
-  }]
+  }[];
+  messages: {
+    id: string;
+    text: string;
+    type: string;
+    isUpdated: boolean;
+    createdDate: string;
+    updatedDate: string;
+    owner: {
+      id: string;
+      firstName: string;
+      lastName: string;
+      avatar: string;
+      phone: string;
+    }
+  }[];
 }
 
 export function* watchLoadDialogs() {
@@ -33,18 +50,15 @@ function fetchDialogs() {
 
   return axios.get('/dialogs', config)
     .then((res: AxiosResponse) => {
-      const dialogs: IDialog[] = [];
-
+      const dialogs: DialogItem[] = [];
       (res.data as Dialog[]).forEach(dialog => {
-        const dialogUser = dialog.users[0];
+        dialog.messages = dialog.messages.length > 1 ?
+          dialog.messages.splice(0, dialog.messages.length - 1) :
+          dialog.messages;
         dialogs.push({
-          id: dialog.id,
-          title: dialogUser.firstName + ' ' + dialogUser.lastName,
-          lastMessage: 'Hi',
-          lastMessageOwner: dialogUser.firstName,
-          lastMessageDate: 'Fri',
-          avatar: dialogUser.avatar
-        } as IDialog);
+          ...dialog,
+          isSelected: false
+        });
       });
 
       return dialogs;

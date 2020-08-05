@@ -1,4 +1,4 @@
-import React, {Dispatch, SetStateAction, useState} from 'react';
+import React, {useState} from 'react';
 
 import './Authentication.css';
 import {SignIn} from "../../components/sign-in/SignIn";
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const Authentication: React.FC<Props> = () => {
-  const [authenticationType]: [string, Dispatch<SetStateAction<string>>] = useState('sign-in');
+  const [authenticationType] = useState('sign-in');
 
   const authenticationSwitcher = (authenticationType: string) => {
     switch (authenticationType) {
