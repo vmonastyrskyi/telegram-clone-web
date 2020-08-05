@@ -17,19 +17,19 @@ P.S. Work in progress...
 ### Demo
 
 Authorization page:
-![alt text](https://i.yapx.ru/IarU3.png)
+![alt text](https://i.yapx.ru/IavNY.png)
 
 The main page:
-![alt text](https://i.yapx.ru/IavAA.png)
+![alt text](https://i.yapx.ru/IavPG.png)
 
 The main page with the selected dialog:
-![alt text](https://i.yapx.ru/IavAZ.png)
+![alt text](https://i.yapx.ru/IavPn.png)
 
 The main page with the selected dialog and checked messages:
-![alt text](https://i.yapx.ru/IavDR.png)
+![alt text](https://i.yapx.ru/IavRX.png)
 
 Contacts modal view:
-![alt text](https://i.yapx.ru/IavDc.png)
+![alt text](https://i.yapx.ru/IavS9.png)
 
 #### Coming / Future features
 
