@@ -17,27 +17,25 @@ export const App: React.FC<Props> = () => {
 
   useEffect(() => {
     const localStorageUpdated = () => {
+      console.log(containsAccessToken())
       setIsAuthenticated(containsAccessToken());
     }
-
     window.addEventListener('storage', localStorageUpdated);
     return () => {
       window.removeEventListener('storage', localStorageUpdated);
     }
   });
 
-  useEffect(() => {
-    if (!isAuthenticated) {
-      console.log('/login');
-      history.replace('/login');
-    } else {
-      console.log('/');
-      history.replace('/');
-    }
-  });
+  if (isAuthenticated && history.location.pathname !== '/') {
+    console.log('/');
+    history.replace('/');
+  } else if (!isAuthenticated && history.location.pathname !== '/login') {
+    console.log('/login');
+    history.replace('/login');
+  }
 
   return (
-    <div className="app_container">
+    <div className="app-container">
       <Switch>
         <Route exact path={'/'} component={Authenticated}/>
         <Route exact path={'/login'} component={Authentication}/>

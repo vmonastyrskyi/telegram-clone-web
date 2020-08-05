@@ -1,5 +1,5 @@
-import {IContact} from "../../components/contacts/Contacts";
-import {PUT_CONTACTS} from "./types";
+import {IContact} from '../../components/contacts/Contacts';
+import {PUT_CONTACTS} from './types';
 
 interface State {
   items: IContact[]

@@ -51,9 +51,10 @@ function fetchDialogs() {
   return axios.get('/dialogs', config)
     .then((res: AxiosResponse) => {
       const dialogs: DialogItem[] = [];
-
       (res.data as Dialog[]).forEach(dialog => {
-        dialog.messages = dialog.messages.splice(0, dialog.messages.length - 1);
+        dialog.messages = dialog.messages.length > 1 ?
+          dialog.messages.splice(0, dialog.messages.length - 1) :
+          dialog.messages;
         dialogs.push({
           ...dialog,
           isSelected: false

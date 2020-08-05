@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './ContactList.css';
-import {ContactListItem} from "../contact-list-item/ContactListItem";
-import {IContact} from "../Contacts";
+import {ContactListItem} from '../contact-list-item/ContactListItem';
+import {IContact} from '../Contacts';
 
 interface Props {
   contacts: IContact[];

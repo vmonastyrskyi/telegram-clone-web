@@ -56,7 +56,7 @@
     color: #222222;
 }
 
-.dialog-item .last-message-date {
+.dialog-item .message-date {
     position: absolute;
     font-size: 11px;
     color: #b3b3b3;
@@ -66,15 +66,15 @@
     line-height: 12px;
 }
 
-.dialog-item:hover .last-message-date {
+.dialog-item:hover .message-date {
     color: #92a6ba;
 }
 
-.dialog-item:hover .last-message {
+.dialog-item:hover .message {
     color: #758c9b;
 }
 
-.dialog-item .last-message {
+.dialog-item .message {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -84,15 +84,15 @@
     font-weight: 400;
 }
 
-.dialog-item .last-message-owner {
+.dialog-item .message-owner {
     color: #5387ac;
     font-weight: 500;
     text-decoration: none;
 }
 
 .dialog-item.selected .dialog-name,
-.dialog-item.selected .last-message,
-.dialog-item.selected .last-message-owner,
-.dialog-item.selected .last-message-date {
+.dialog-item.selected .message,
+.dialog-item.selected .message-owner,
+.dialog-item.selected .message-date {
     color: #ffffff;
 }
