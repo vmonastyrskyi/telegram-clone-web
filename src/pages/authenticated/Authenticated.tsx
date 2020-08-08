@@ -3,8 +3,8 @@ import {useDispatch} from 'react-redux';
 import io from 'socket.io-client';
 
 import './Authenticated.css';
-import {Navbar} from '../../components/navbar/Navbar';
-import {Main} from '../../components/main/Main';
+import {Navbar} from '../../components/view/navbar/Navbar';
+import {Main} from '../../components/view/main/Main';
 import {loadDialogs} from '../../redux/dialogs/actions';
 import {loadContacts} from '../../redux/contacts/actions';
 import {putClientSocket, removeClientSocket} from '../../redux/app/actions';
@@ -23,7 +23,7 @@ export const Authenticated: React.FC<Props> = () => {
     dispatch(loadContacts());
   }
 
-  useEffect(() => {
+  const socketConnection = () => {
     const socket = io('ws://localhost:8080');
     socket.on('connect', () => {
       console.log('[WS] connected');
@@ -38,10 +38,11 @@ export const Authenticated: React.FC<Props> = () => {
       dispatch(removeClientSocket());
       socket.disconnect();
     }
-  })
+  }
+  useEffect(socketConnection, []);
 
   return (
-    <div className="authenticated_container">
+    <div className="authenticated-container">
       <div className="left_sector"/>
       <div className="middle_sector">
         <Navbar/>

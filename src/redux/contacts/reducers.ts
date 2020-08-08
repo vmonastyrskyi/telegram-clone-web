@@ -1,4 +1,4 @@
-import {IContact} from '../../components/contacts/Contacts';
+import {IContact} from '../../components/view/contacts/Contacts';
 import {PUT_CONTACTS} from './types';
 
 interface State {
