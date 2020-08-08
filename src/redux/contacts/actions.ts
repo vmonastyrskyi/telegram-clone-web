@@ -1,5 +1,5 @@
 import {LOAD_CONTACTS, PUT_CONTACTS} from './types';
-import {IContact} from '../../components/contacts/Contacts';
+import {IContact} from '../../components/view/contacts/Contacts';
 
 export const loadContacts = () => {
   return {type: LOAD_CONTACTS};

@@ -1,0 +1,22 @@
+.country-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 26px;
+    cursor: pointer;
+    line-height: 18px;
+}
+
+.country-item:hover {
+    background-color: #f2f6fa;
+}
+
+.country-item .country-name {
+    font-size: 12px;
+}
+
+.country-item .country-code {
+    font-size: 12px;
+    color: #999999;
+}

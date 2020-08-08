@@ -1,0 +1,32 @@
+#countries .modal-content {
+    width: 392px;
+}
+
+#countries .modal-header {
+    flex: 0 0 54px;
+}
+
+#countries .modal-body {
+    flex: 1 0 auto;
+    padding-bottom: 15px;
+}
+
+#countries .title {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 26px;
+}
+
+#countries .close-btn {
+    color: #dde8f1;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 22px;
+}
+
+#countries .close-btn:hover {
+    color: #ffffff;
+}

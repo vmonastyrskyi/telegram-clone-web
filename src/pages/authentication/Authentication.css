@@ -1,5 +1,210 @@
-.authentication_container {
+#authentication-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+#authentication-container .header {
+    height: 226px;
+    background-color: #5682a3;
+}
+
+#authentication-container .main {
+    position: absolute;
+    width: 404px;
+    left: calc(50% - 202px);
+    top: 94px;
+}
+
+#authentication-container .form-header {
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#authentication-container .logo {
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 30px;
+    padding: 23px 15px 22px 15px;
+    display: flex;
+    align-items: center;
+}
+
+#authentication-container .logo > img {
+    width: 30px;
+    height: 30px;
+    margin-right: 18px;
+}
+
+#authentication-container .login-btn {
+    font-size: 13px;
+    padding: 30px 10px 28px 15px;
+    line-height: 20px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+#authentication-container .login-btn > span {
+    margin-left: 5px;
+}
+
+#authentication-container .form-body {
+    background-color: #fff;
+    padding: 44px 65px;
+    box-shadow: 0 1px 1px rgba(97, 127, 152, .2), 1px 0 0 rgba(97, 127, 152, .1), -1px 0 0 rgba(97, 127, 152, .1);
+    border-radius: 2px;
+    border: 0;
+    margin: 0;
+}
+
+#authentication-container .phone-input-title,
+#authentication-container .verifying-code-title {
+    color: #222;
+    margin: 0 0 20px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#authentication-container .verifying-code-title {
+    margin: 0;
+}
+
+#authentication-container .edit-phone {
+    color: #3a6d99;
+    font-size: 13px;
+    cursor: pointer;
+    width: auto;
+    text-align: center;
+    margin: 5px 0 15px;
+}
+
+#authentication-container .edit-phone:hover {
+    text-decoration: underline;
+}
+
+#authentication-container .phone-input-hint,
+#authentication-container .verifying-code-hint {
+    color: #999;
+    margin: 15px 0 30px;
+    font-size: 13px;
+    line-height: 160%;
+}
+
+#authentication-container .verifying-code-title,
+#authentication-container .verifying-code-hint,
+#authentication-container .verifying-code,
+#authentication-container .verifying-code + label {
+    text-align: center;
+}
+
+#authentication-container .country-input,
+#authentication-container .phone-input {
+    display: flex;
+    flex-direction: row;
+}
+
+#authentication-container .form-control {
+    position: relative;
+    color: #999;
+    padding: 0;
+    margin: 0 0 22px;
+    height: 50px;
+}
+
+#authentication-container .form-control label {
+    top: 23px;
+    position: absolute;
+    display: block;
+    font-size: 13px;
+    transition: .15s cubic-bezier(.35, 0, .25, 1);;
+    cursor: text;
+    width: 100%;
+}
+
+#authentication-container .form-control input {
+    position: relative;
+    font-size: 13px;
+    top: 18px;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    box-shadow: 0 1px 0 #e6e6e6;
+    transition: .15s cubic-bezier(.35, 0, .25, 1);;
+    width: 100%;
+}
+
+#authentication-container .code:focus,
+#authentication-container .phone:focus,
+#authentication-container .verifying-code:focus {
+    box-shadow: 0 2px 0 #77b7e4;
+}
+
+#authentication-container .code:focus + label,
+#authentication-container .phone:focus + label,
+#authentication-container .verifying-code:focus + label,
+#authentication-container .code.has-value + label,
+#authentication-container .phone.has-value + label,
+#authentication-container .verifying-code.has-value + label {
+    transform: translateY(-22px);
+    font-size: 12px;
+    cursor: default;
+}
+
+#authentication-container .country.has-value + label {
+    transform: translateY(-22px);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#authentication-container .country-input :nth-child(1) {
+    cursor: pointer;
+    flex: 1 0 auto;
+}
+
+#authentication-container .phone-input :nth-child(1) {
+    flex: 0 0 50px;
+    margin-right: 25px;
+}
+
+#authentication-container .phone-input :nth-child(2) {
+    flex: 1 0 auto;
+}
+
+#authentication-container .form-footer {
+    color: #84a2bc;
+    font-size: 13px;
+    margin-top: 25px;
+    text-align: center;
+    line-height: 16px;
+}
+
+#authentication-container .form-footer p {
+    margin: 0 0 10px 0;
+}
+
+#authentication-container .form-footer a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#authentication-container .form-footer a:hover {
+    text-decoration: underline;
+}
+
+#authentication-container .form-footer a:visited {
+    color: #84a2bc;
+}
+
+#authentication-container .grecaptcha-badge {
+    display: none !important;
 }

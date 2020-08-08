@@ -1,5 +1,5 @@
 import {LOAD_MESSAGES, PUT_MESSAGES} from './types';
-import {MessageItem} from "./reducers";
+import {MessageItem} from './reducers';
 
 export const loadMessages = (dialogId: string) => {
   return {type: LOAD_MESSAGES, payload: dialogId};
